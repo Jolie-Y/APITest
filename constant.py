@@ -7,4 +7,9 @@ HEADERS = {
     # 'X-Droi-Api-Key': 'wcVEv3eLF4ELUXfEzEvpAXo0x4uNQrOc7NqGBXk_Yml_1l2lr49OgxY8SrhLwn0D',
 }
 
-URL = "https://api.droibaas.com/api/v2/"
+TIMEOUT = 10
+
+BAAS_URL = "https://api.droibaas.com/api/v2/"
+TASK_URL = "http://10.20.90.2/api/1950/task"
+
+

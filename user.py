@@ -3,12 +3,13 @@
 import requests
 import constant
 
-def login():
+
+def login(phone: str, verify: str):
     json = {
         "act": "loginsms",
         "detail": {
-            "phone": "13333333333",
-            "verify": "111111",
+            "phone": phone,
+            "verify": verify,
             "channel": "Test",
             "fincode": "TOP_QUJIE",
             "device": {
@@ -26,12 +27,24 @@ def login():
         }
     }
 
-    r = requests.post(constant.URL + "loginopt", json=json, headers=constant.HEADERS, verify=False)
+    response = requests.post(constant.BAAS_URL + "loginopt", json=json, headers=constant.HEADERS, timeout=constant.TIMEOUT)
 
-    auth = ''
+    auth = None
 
-    if r.status_code == 200:
-        json = r.json()
-        auth = json['Result']['detail']['auth']
+    if response.status_code == 200:
+        json = response.json()
+        print(json)
+        result = json['Result']
+        if result is not None and json['Code'] == 0 and result['success'] and result['detail'] is not None:
+            auth = result['detail']['auth']
 
     return auth
+
+
+def get_user_info(auth):
+    json = {
+        "act": "refresh",
+        "detail": auth
+    }
+    response = requests.post(constant.BAAS_URL + "loginopt", json=json, headers=constant.HEADERS, timeout=constant.TIMEOUT)
+    return response
