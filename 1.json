@@ -1,0 +1,27 @@
+{'success': True, 'detail': {'daily': {'tasks': [{'identity': 'read-news', 'status': {}, 'type': 'youliao:static'}, {'identity': '
+    slaver-bind-reward', 'status': {}, 'type': 'youliao:static'}, {'identity': 'little-game', 'status': {}, 'type': 'youliao:static'},
+     {'identity': 'adroi-video', 'status': {'last': 0, 'closed': False, 'count': 3}, 'type': 'youliao:repeat_sign'}, {'identity': 'sho
+    w-income', 'status': {'last': 0, 'closed': False, 'count': 1}, 'type': 'youliao:repeat_sign'}, {'identity': 'show-income#show_vide
+    o', 'status': {'last': 0, 'closed': False, 'count': 1}, 'type': 'youliao:repeat_sign'}, {'identity': 'xianwan1', 'status': {}, 'ty
+    pe': 'youliao:static'}, {'identity': 'wake-slaver', 'status': {}, 'type': 'youliao:static'}, {'identity': 'credit-card', 'status':
+     0, 'type': 'youliao:noob'}, {'identity': 'adver-recommend', 'status': {}, 'type': 'youliao:static'}, {'identity': 'box', 'status'
+    : {'last': 0, 'next': 0}, 'type': 'youliao:repeat_interval'}]}, 'new': {'tasks': [{'identity': 'bind-master#show_video', 'status':
+     0, 'type': 'youliao:noob'}, {'identity': 'bind-phone#show_video', 'status': 0, 'type': 'youliao:noob'}, {'identity': 'focus-mp', 
+    'status': 0, 'type': 'youliao:noob'}, {'identity': 'first-share-news', 'status': 0, 'type': 'youliao:noob'}]}, '$upd_serial': 45, 'backend': {'tasks': [{'identity': 'dzp-video', 'status': {'last': 0, 'closed': False, 'count': 3}, 'type': 'youliao:repeat_sign'}, {'identity': 'sign-video', 'status': {'last': 0, 'closed': False, 'count': 1}, 'type': 'youliao:repeat_sign'}, {'identity': 'ddz-video', 'status': {'last': 0, 'closed': False, 'count': 3}, 'type': 'youliao:repeat_sign'}, {'identity': 'ddz-video1', 'status': {'last': 0, 'closed': False, 'count': 2}, 'type': 'youliao:repeat_sign'}, {'identity': 'box-video', 'status': {'last': 0, 'closed': False, 'count': 2}, 'type': 'youliao:repeat_sign'}, {'identity': 'evaluate-youliao', 'status': 0, 'type': 'youliao:noob'}]}, 'gamegold': {'tasks': [{'identity': 'qujie-adver-download', 'status': {}, 'type': 'youliao:static'}]}, 'play': {'tasks': [{'identity': 'xianwan', 'status': {}, 'type': 'youliao:static'}]}}}
+
+
+
+
+    {'Code': 0, 'Result': {'success': True, 'detail': {'sync': {}, 'grouptask': 'group_available', 'logindays': 1, 'wxbind': False, 'identitycard
+': '', 'avatar': '', 'name': '有料oBfngp', 'identitybind': False, 'gold': 0, 'renewdevice': False, 'realname': '', 'phone': '130****4594', 's
+tate': 0, 'id': '5e966d38d41d8c62cb000001', 'cash': 0, 'regts': 1586916664, 'signtotal': 0, 'slaverfreeze': 0, 'bindidcard': False, 'create':
+ False, 'adroidaily': {'ddzadroi': 3, 'adwheel': 3, 'gadroi': 5}, 'alibind': False, 'invcode': '276538260', 'phonebind': True, 'gender': 0, '
+auth': 'R1gS5s5zoNFfzMIPD6iPxY6oipw4kdsXFd51wWVNIrbbwaJn4k1qniPeJ4eyltoM', 'events': {}, 'totalGold': 0, 'qqbind': False, 'canBindId': True, 
+'age': 0, 'wxpubbind': False, 'master': '', 'slaver': 0, 'totalCash': 0, 'fincode': 'TOP_QUJIE', 'avalxch': False}}}
+200
+
+
+
+{'Code': 0, 'Result': {'success': True, 'detail': {'sync': {}, 'grouptask': 'group_available', 'logindays': 1, 'wxbind': False, 'identitycard': '', 'avatar': '', 'name': '有料aiQ8nh', 'identitybind': False, 'gold': 2500, 'renewdevice': False, 'realname': '', 'phone': '138****4510', 'state': 0, 'id': '5e967a4cd41d8c6310000006', 'cash': 0, 'regts': 1586920012, 'signtotal': 0, 'slaverfreeze': 0, 'bindidcard': False, 'create': False, 'adroidaily': {'ddzadroi': 3, 'adwheel': 3, 'gadroi': 5}, 'alibind': False, 'invcode': '002083115', 'phonebind': True, 'gender': 0, 'auth': 'aSdWv9OiETmC37Qijos9xNFmY2n5EkDV3BHrzYgkONeNxoz8h8pjAlwZyMw4twhf', 'events': {}, 'totalGold': 2500, 'qqbind': False, 'canBindId': True, 'age': 0, 'wxpubbind': False, 'master': '', 'slaver': 0, 'totalCash': 0, 'fincode': 'TOP_QUJIE', 'avalxch': False}}}
+('aSdWv9OiETmC37Qijos9xNFmY2n5EkDV3BHrzYgkONeNxoz8h8pjAlwZyMw4twhf', '002083115')
+200

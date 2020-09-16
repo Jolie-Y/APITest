@@ -2,6 +2,7 @@
 
 import requests
 import constant
+from httpRequest import HttpRequest
 
 
 def login(phone: str, verify: str):
@@ -27,7 +28,8 @@ def login(phone: str, verify: str):
         }
     }
 
-    response = requests.post(constant.BAAS_URL + "loginopt", json=json, headers=constant.HEADERS, timeout=constant.TIMEOUT)
+    #response = requests.post(constant.BAAS_URL + "loginopt", json=json, headers=constant.HEADERS, timeout=constant.TIMEOUT)
+    response = HttpRequest().http_request(constant.BAAS_URL + "loginopt",json,constant.HEADERS,"post")
 
     auth = None
 
@@ -37,14 +39,100 @@ def login(phone: str, verify: str):
         result = json['Result']
         if result is not None and json['Code'] == 0 and result['success'] and result['detail'] is not None:
             auth = result['detail']['auth']
-
-    return auth
-
+            invcode = result["detail"]["invcode"]
+            return auth,invcode
+        else:
+            return json
 
 def get_user_info(auth):
     json = {
         "act": "refresh",
         "detail": auth
     }
-    response = requests.post(constant.BAAS_URL + "loginopt", json=json, headers=constant.HEADERS, timeout=constant.TIMEOUT)
+    #response = requests.post(constant.BAAS_URL + "loginopt", json=json, headers=constant.HEADERS, timeout=constant.TIMEOUT)
+    response = HttpRequest().http_request(constant.BAAS_URL + "loginopt",json,constant.HEADERS,"post")
     return response
+
+
+def get_phoneIdentifingCode(phone):
+    json = {
+        "act":"verify",
+        "detail":{
+            "phone":phone
+        }
+    }
+    #response = requests.post(constant.loginUrl,headers=constant.HEADERS,json=json)
+    response = HttpRequest().http_request(constant.loginUrl,json,constant.HEADERS,"post")
+    return response
+
+def get_masterNickName(auth):
+    json = {
+        "act":"master",
+        "detail":auth
+    }
+    #response = requests.post(constant.loginUrl,headers=constant.HEADERS,json=json)
+    response = HttpRequest().http_request(constant.loginUrl,json,constant.HEADERS,"post")
+    result = response.json()
+    success = result["Result"]["success"]
+    if success:
+        return result["Result"]["detail"]
+    else:
+        return success
+
+
+#查询徒弟贡献榜
+def get_slaverFeed(auth):
+    json = {
+        "act":"slaverfeed",
+        "detail":{
+            "auth":auth
+            }
+    }
+    #response = requests.post(constant.bindmasterUrl,headers=constant.HEADERS,json=json)
+    response = HttpRequest().http_request(constant.bindmasterUrl,json,constant.HEADERS,"post")
+    return response
+
+
+#查询用户全部好友
+def get_allFriends(auth):
+    json = {
+        "act":"allFriends",
+        "detail":{
+            "auth":auth
+        }
+    }
+    #response = requests.post(constant.bindmasterUrl,headers=constant.HEADERS,json=json)
+    response = HttpRequest().http_request(constant.bindmasterUrl,json,constant.HEADERS,"post")
+    return response
+
+#查询金币明细
+def get_goldLogDay(auth):
+    json = {
+        "act":"goldlogday",
+        "detail":{
+            "auth":auth
+        }
+    }
+    #response = requests.post(constant.bindmasterUrl,headers=constant.HEADERS,json=json)
+    response = HttpRequest().http_request(constant.bindmasterUrl,json,constant.HEADERS,"post")
+    return response
+'''
+#查询用户今日金币实时变化
+def get_goldToday(auth):
+    json = {
+        "act":"goldtoday",
+        "detail":auth
+    }
+    response = requests.post(constant.bindmasterUrl,headers=constant.HEADERS,json=json)
+    return response
+'''
+
+def get_goldToday(auth):
+    json = {
+        "act":"goldtoday",
+        "detail":auth
+    }
+    #response = requests.post(constant.bindmasterUrl,headers=constant.HEADERS,json=json)
+    #return response
+    re = HttpRequest().http_request(constant.bindmasterUrl,json,constant.HEADERS,"post")
+    return re
